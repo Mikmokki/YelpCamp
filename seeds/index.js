@@ -23,12 +23,18 @@ const seedDB = async () => {
     await Campground.deleteMany({});
     for (let i = 0; i < 50; i++) {
         const random1000 = Math.floor(Math.random() * 1000);
-        const price =  Math.floor(Math.random() * 20) +10;
+        const price = Math.floor(Math.random() * 20) + 10;
         const camp = new Campground({
             author: "600c0cf9686ac1079cea5c4c",
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: "https://source.unsplash.com/collection/483251",
+            images: [
+                {
+                    url: 'https://res.cloudinary.com/diiovousq/image/upload/v1611657126/YelpCamp/q82mbmhrd2mcjpzb1cfo.jpg',
+                    filename: 'YelpCamp/q82mbmhrd2mcjpzb1cfo'
+                  }
+              
+            ],
             description: "Decription of the year",
             price: price
         })
