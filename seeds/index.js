@@ -36,7 +36,11 @@ const seedDB = async () => {
               
             ],
             description: "Decription of the year",
-            price: price
+            price: price,
+            geometry: {
+                type: "Point",
+                coordinates: [24.832927532876703,60.186114650866955]
+            }
         })
         await camp.save();
     }
